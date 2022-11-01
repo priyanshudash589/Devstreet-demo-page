@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./favicon_io/android-chrome-512x512.png" type="image/x-icon">
+    <title>Devs'Street || Official page (sign in page)</title>
+</head>
+<body>
+
+    <!-- left div containing a logo and a text -->
+
+    <div id="leftdiv">
+
+        <!-- logobox -->
+
+      <div id="logobox">
+<img src="./DEVS' STREET LOGO BLACK.png" alt="devs'street logo" width="250" height="250">
+      </div>
+      
+      
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="rightdiv">
+        <!-- login logo 
+         -->
+         <div id="loginlogo">
+            <!-- <img src="./login devstreet.png" alt="devs'street logoin logo" width="150" height="150"> -->
+                  </div>
+                  
+    <!-- sign in sign up and log in  -->
+    <div id="logindetails">
+        <input type="text" name="Username" id="username" autocomplete="username" placeholder="Enter Username">
+
+        <input type="text" name="email" id="email" autocomplete="email" placeholder="Enter Email">
+
+        <input type="password" name="Password" id="password" placeholder="Enter Password">
+  
+        <button id="signIn" value="Submit">Sign In</button>   
+  
+        <button id="signUp" value="Submit">Sign Up</button>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- //footer -->
+    <!-- <footer class="footerdiv">
+
+    </footer> -->
+
+    <script body type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js"
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDoPnUAALadI7RiuhMnDZAMwgSlM7JQPok",
+          authDomain: "devsstreet-authentication.firebaseapp.com",
+          databaseURL: "https://devsstreet-authentication-default-rtdb.firebaseio.com",
+          projectId: "devsstreet-authentication",
+          storageBucket: "devsstreet-authentication.appspot.com",
+          messagingSenderId: "57838723959",
+          appId: "1:57838723959:web:dc18b898b63d08d41df772"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+
+        signUp.addEventListener('click',(e) => {
+var email = document.getElementById('email').value;
+var username = document.getElementById('username').value;
+var password = document.getElementById('password').value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+    alert('User Created!');
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+    alert(errorMessage);
+        });
+
+      </script>
+</body>
+</html>
